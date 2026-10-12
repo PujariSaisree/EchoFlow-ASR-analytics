@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>EchoFlow — Settings</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Figtree:wght@400;500;600&family=Fraunces:opsz,wght@9..144,500;9..144,650&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/static/css/app.css">
+</head>
+<body>
+  <template id="page-template">
+    <div class="page-head">
+      <div>
+        <h2>Settings</h2>
+        <p>EchoFlow is local-first. Audio is transcribed with Faster-Whisper on this machine and stored in SQLite.</p>
+      </div>
+    </div>
+    <section class="grid-2">
+      <article class="card">
+        <h3>ASR model</h3>
+        <select id="model"></select>
+        <div class="toolbar" style="margin-top:12px">
+          <button class="btn" id="save">Save default model</button>
+        </div>
+        <p class="status" id="status"></p>
+      </article>
+      <article class="card">
+        <h3>Privacy and storage</h3>
+        <div id="privacy"></div>
+      </article>
+    </section>
+  </template>
+  <script src="/static/js/api.js"></script>
+  <script src="/static/js/layout.js"></script>
+  <script src="/static/js/settings.js"></script>
+</body>
+</html>

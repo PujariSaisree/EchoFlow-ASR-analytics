@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>EchoFlow — Model Evaluation</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Figtree:wght@400;500;600&family=Fraunces:opsz,wght@9..144,500;9..144,650&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/static/css/app.css">
+</head>
+<body>
+  <template id="page-template">
+    <div class="page-head">
+      <div>
+        <h2>Model Evaluation</h2>
+        <p>WER and CER are calculated only when a reference transcript is provided. They are never estimated.</p>
+      </div>
+    </div>
+    <section class="grid-2">
+      <article class="card">
+        <label>Recording</label>
+        <select id="picker"></select>
+        <label style="margin-top:12px;display:block">Reference transcript</label>
+        <textarea id="reference" rows="8" placeholder="Paste the known transcript to compute WER and CER."></textarea>
+        <div class="toolbar" style="margin-top:12px">
+          <button class="btn" id="run">Evaluate</button>
+        </div>
+      </article>
+      <article class="card">
+        <h3>Results</h3>
+        <div id="results" class="empty">Run evaluation after selecting a recording.</div>
+      </article>
+    </section>
+  </template>
+  <script src="/static/js/api.js"></script>
+  <script src="/static/js/layout.js"></script>
+  <script src="/static/js/evaluation.js"></script>
+</body>
+</html>

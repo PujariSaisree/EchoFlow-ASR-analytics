@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>EchoFlow — Speech Analytics</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Figtree:wght@400;500;600&family=Fraunces:opsz,wght@9..144,500;9..144,650&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/static/css/app.css">
+</head>
+<body>
+  <template id="page-template">
+    <div class="page-head">
+      <div>
+        <h2>Speech Analytics</h2>
+        <p>Each KPI answers a business question about the selected conversation.</p>
+      </div>
+    </div>
+    <label>Recording</label>
+    <select id="picker"></select>
+    <section class="kpis" id="kpis" style="margin-top:18px"></section>
+    <section class="grid-2">
+      <article class="card">
+        <h3>Conversation behavior</h3>
+        <canvas id="behaviorChart"></canvas>
+      </article>
+      <article class="card">
+        <h3>System performance</h3>
+        <div id="perf"></div>
+      </article>
+    </section>
+  </template>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.1/dist/chart.umd.min.js"></script>
+  <script src="/static/js/api.js"></script>
+  <script src="/static/js/layout.js"></script>
+  <script src="/static/js/analytics.js"></script>
+</body>
+</html>

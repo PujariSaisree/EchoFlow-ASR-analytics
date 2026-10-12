@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>EchoFlow — Business Insights</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Figtree:wght@400;500;600&family=Fraunces:opsz,wght@9..144,500;9..144,650&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/static/css/app.css">
+</head>
+<body>
+  <template id="page-template">
+    <div class="page-head">
+      <div>
+        <h2>Business Insights</h2>
+        <p>Observations are generated from stored metrics. They are not independent facts about people or intent.</p>
+      </div>
+    </div>
+    <label>Recording</label>
+    <select id="picker"></select>
+    <section class="grid-2" style="margin-top:18px">
+      <article class="card">
+        <h3>Key findings</h3>
+        <div id="findings"></div>
+      </article>
+      <article class="card">
+        <h3>Areas to review</h3>
+        <div id="review"></div>
+        <h3>Keywords</h3>
+        <div id="keywords"></div>
+      </article>
+    </section>
+    <section class="card" style="margin-top:16px">
+      <h3>AI Analyst</h3>
+      <p class="muted">Answers are produced from structured JSON metrics. Raw audio is not sent to an external model.</p>
+      <textarea id="question" rows="3" placeholder="How fast was the speaker talking?"></textarea>
+      <div class="toolbar" style="margin-top:10px">
+        <button class="btn" id="ask">Ask</button>
+      </div>
+      <div id="answer" class="status"></div>
+    </section>
+  </template>
+  <script src="/static/js/api.js"></script>
+  <script src="/static/js/layout.js"></script>
+  <script src="/static/js/insights.js"></script>
+</body>
+</html>

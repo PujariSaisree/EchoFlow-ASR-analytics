@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>EchoFlow — Transcriptions</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Figtree:wght@400;500;600&family=Fraunces:opsz,wght@9..144,500;9..144,650&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/static/css/app.css">
+</head>
+<body>
+  <template id="page-template">
+    <div class="page-head">
+      <div>
+        <h2>Transcriptions</h2>
+        <p>Upload speech, review timestamped segments, and export structured results.</p>
+      </div>
+    </div>
+    <section class="grid-2">
+      <article class="card">
+        <h3>Audio upload</h3>
+        <div class="dropzone">
+          <p>WAV, MP3, M4A, FLAC, OGG, or WebM. Maximum 50 MB. Processing stays on this machine.</p>
+          <input id="file" type="file" accept=".wav,.mp3,.m4a,.flac,.ogg,.webm,audio/*">
+        </div>
+        <div class="toolbar" style="margin-top:12px">
+          <select id="model">
+            <option value="tiny">tiny</option>
+            <option value="base">base</option>
+            <option value="small">small</option>
+            <option value="medium">medium</option>
+          </select>
+          <button class="btn" id="upload">Process recording</button>
+        </div>
+        <div class="status" id="status">Waiting for a file.</div>
+        <audio id="player" controls hidden></audio>
+      </article>
+      <article class="card">
+        <h3>History</h3>
+        <div id="history"></div>
+      </article>
+    </section>
+    <section class="card" style="margin-top:16px" id="detail">
+      <div class="empty">Select or upload a recording to inspect the transcript.</div>
+    </section>
+  </template>
+  <script src="/static/js/api.js"></script>
+  <script src="/static/js/layout.js"></script>
+  <script src="/static/js/transcriptions.js"></script>
+</body>
+</html>
